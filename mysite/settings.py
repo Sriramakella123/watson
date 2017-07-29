@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'mathfilters',
 ]
 
 MIDDLEWARE = [
@@ -81,10 +79,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd1qpguvksfr292',
-		'USER': 'qdkmgvwqckwksx',
-        'PASSWORD': '0293d80711d2748784af8ad0ea9c7fe27a8cd013a1afe908a483b96914df54c8',
-        'HOST': 'ec2-184-73-199-72.compute-1.amazonaws.com',
+        'NAME': 'd9cj4t8uqv3hlg',
+		'USER': 'jlseriqostjikf',
+        'PASSWORD': '82540c61eead1deb9ceb5fd815ac432649567a4c5417221d5697d5fe53bd3ec6',
+        'HOST': 'ec2-23-21-220-152.compute-1.amazonaws.com',
         'PORT': '5432',
 
     }
@@ -143,7 +141,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Update database configuration with $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] = dj_database_url.config()
 
 try:
     from .local_settings import *
